@@ -8,7 +8,7 @@
 
   * Add support for Redis Sentinel.
 
-  * Don't raise `Redix.Error` errors on non-bang variants of functions. This means that for example `Redix.command/3` won't raise a `Redix.Error` exception in case of Redis errors (like wront typing) and will return that error instead. In general, if you're pattern matching on `{:error, _}` to handle **connection errors** (for example, to retry after a while), now specifically match on `{:error, %Redix.ConnectionError{}}`. If you want to handle all possible errors the same way, keep matching on `{:error, _}`.
+  * Don't raise `Redix.Error` errors on non-bang variants of functions. This means that for example `Redix.command/3` won't raise a `Redix.Error` exception in case of Redis errors (like wrong typing) and will return that error instead. In general, if you're pattern matching on `{:error, _}` to handle **connection errors** (for example, to retry after a while), now specifically match on `{:error, %Redix.ConnectionError{}}`. If you want to handle all possible errors the same way, keep matching on `{:error, _}`.
 
 ### Bug fixes and improvements
 
